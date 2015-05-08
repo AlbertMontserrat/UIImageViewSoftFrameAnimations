@@ -46,10 +46,15 @@
 @property(nonatomic,weak) id<SoftFrameAnimationsDelegate> delegate;
 
 -(void)setIdleAnimation:(NSString *)idleAnimationName  numberOfDigits:(NSInteger)digits firstDigit:(NSInteger)firstDigit andExtension:(NSString *)ext startNow:(BOOL)startNow andFPS:(CGFloat)framesPerSecond;
+-(void)playIdle;
+-(void)resumeIdle;
+-(void)pauseIdle;
+-(void)removeIdle;
 
 -(void)softFrameAnimateWithImageName:(NSString *)imageName numberOfDigits:(NSInteger)digits firstDigit:(NSInteger)firstDigit andExtension:(NSString *)ext loop:(BOOL)loop loopCount:(NSInteger)loopCount andFPS:(CGFloat)framesPerSecond;
 -(void)pauseSoftFrameAnimation;
--(void)playSoftFrameAnimation;
+-(void)resumeSoftFrameAnimation;
+
 -(void)setImagePath:(NSString *)image;
 -(NSString *)getImageNameDisplayed;
 

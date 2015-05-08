@@ -22,7 +22,7 @@
 
 @implementation UIImageView (SoftFrameAnimations)
 
-#pragma mark - Soft animations
+#pragma mark - SoftFrameAnimations Idle
 
 -(void)setIdleAnimation:(NSString *)idleAnimationName  numberOfDigits:(NSInteger)digits firstDigit:(NSInteger)firstDigit andExtension:(NSString *)ext startNow:(BOOL)startNow andFPS:(CGFloat)framesPerSecond{
     self.idleimagename = idleAnimationName;
@@ -35,25 +35,49 @@
     }
 }
 
-+(UIImageView *)softFrameAnimateWithImageName:(NSString *)imageName numberOfDigits:(NSInteger)digits firstDigit:(NSInteger)firstDigit andExtension:(NSString *)ext loop:(BOOL)loop loopCount:(NSInteger)loopCount andFPS:(CGFloat)framesPerSecond inView:(UIView *)view inPoint:(CGPoint)center{
+-(void)playIdle{
+    if(!self.idleimagename)
+        return;
     
-    NSString *format = [NSString stringWithFormat:@"%%@%%0%dd",(int)digits];
-    NSString *imageNameFirst = [NSString stringWithFormat:format,imageName,firstDigit];
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:imageNameFirst ofType:ext];
-    
-    UIImage *img = [UIImage imageWithContentsOfFile:imagePath];
-    if(!img)
-        return nil;
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, img.size.width/2.0, img.size.height/2.0)];
-    imageView.image = img;
-    imageView.center = center;
-    [view addSubview:imageView];
-    [imageView softFrameAnimateWithImageName:imageName numberOfDigits:digits firstDigit:firstDigit andExtension:ext loop:loop loopCount:loopCount andFPS:framesPerSecond];
-    
-    return imageView;
-    
+    [self softFrameAnimateWithImageName:self.idleimagename numberOfDigits:self.idlenumberOfDigits firstDigit:self.idlefirstdigit andExtension:self.idleextension loop:YES loopCount:0 andFPS:self.idlefps];
 }
+
+-(void)resumeIdle{
+    if(!self.idleimagename)
+        return;
+    
+    if([self.imagename isEqualToString:self.idleimagename]){
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loopImages) object:nil];
+        
+        self.pause = NO;
+        [self loopImages];
+    }else{
+        [self playIdle];
+    }
+}
+
+-(void)pauseIdle{
+    if(!self.idleimagename)
+        return;
+    
+    if([self.imagename isEqualToString:self.idleimagename]){
+        [self pauseSoftFrameAnimation];
+    }
+}
+
+-(void)removeIdle{
+    if(!self.idleimagename)
+        return;
+    
+    if([self.imagename isEqualToString:self.idleimagename]){
+        [self pauseSoftFrameAnimation];
+    }
+    self.idleimagename = nil;
+}
+
+
+
+#pragma mark - SoftFrameAnimations Soft animate
 
 -(void)softFrameAnimateWithImageName:(NSString *)imageName numberOfDigits:(NSInteger)digits firstDigit:(NSInteger)firstDigit andExtension:(NSString *)ext loop:(BOOL)loop loopCount:(NSInteger)loopCount andFPS:(CGFloat)framesPerSecond{
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loopImages) object:nil];
@@ -121,6 +145,8 @@
                     }
                 }
                 
+                self.imagename = nil;
+                
                 return;
             }
             
@@ -139,6 +165,8 @@
                     [self.delegate softFrameAnimationDidEndAnimation:self];
                 }
             }
+            
+            self.imagename = nil;
             
             if(self.idleimagename){
                 [self softFrameAnimateWithImageName:self.idleimagename numberOfDigits:self.idlenumberOfDigits firstDigit:self.idlefirstdigit andExtension:self.idleextension loop:YES loopCount:0 andFPS:self.idlefps];
@@ -177,12 +205,26 @@
     self.pause = YES;
 }
 
--(void)playSoftFrameAnimation{
+-(void)stopSoftFrameAnimation{
+    if(!self.imagename)
+        return;
+    
+    [self pauseSoftFrameAnimation];
+    self.imagename = nil;
+}
+
+-(void)resumeSoftFrameAnimation{
+    if(!self.imagename)
+        return;
+    
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loopImages) object:nil];
     
     self.pause = NO;
     [self loopImages];
 }
+
+
+#pragma mark - SoftFrameAnimations Image setting
 
 -(void)setImagePath:(NSString *)image{
     if(!self.continuePlayingOnSetImage){
@@ -192,10 +234,35 @@
     [self setImage:[UIImage imageWithContentsOfFile:image]];
 }
 
+
+#pragma mark - SoftFrameAnimations Current image name
+
 -(NSString *)getImageNameDisplayed{
     return self.imageDisplayed;
 }
 
+
+#pragma mark - SoftFrameAnimations Static image creation
+
++(UIImageView *)softFrameAnimateWithImageName:(NSString *)imageName numberOfDigits:(NSInteger)digits firstDigit:(NSInteger)firstDigit andExtension:(NSString *)ext loop:(BOOL)loop loopCount:(NSInteger)loopCount andFPS:(CGFloat)framesPerSecond inView:(UIView *)view inPoint:(CGPoint)center{
+    
+    NSString *format = [NSString stringWithFormat:@"%%@%%0%dd",(int)digits];
+    NSString *imageNameFirst = [NSString stringWithFormat:format,imageName,firstDigit];
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:imageNameFirst ofType:ext];
+    
+    UIImage *img = [UIImage imageWithContentsOfFile:imagePath];
+    if(!img)
+        return nil;
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, img.size.width/2.0, img.size.height/2.0)];
+    imageView.image = img;
+    imageView.center = center;
+    [view addSubview:imageView];
+    [imageView softFrameAnimateWithImageName:imageName numberOfDigits:digits firstDigit:firstDigit andExtension:ext loop:loop loopCount:loopCount andFPS:framesPerSecond];
+    
+    return imageView;
+    
+}
 
 
 
