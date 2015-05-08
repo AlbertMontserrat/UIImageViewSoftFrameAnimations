@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'UIImageViewSoftFrameAnimations', :exclusive => true do
+  pod "UIImageViewSoftFrameAnimations", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "UIImageViewSoftFrameAnimations", :path => "../"
+
+  
+end

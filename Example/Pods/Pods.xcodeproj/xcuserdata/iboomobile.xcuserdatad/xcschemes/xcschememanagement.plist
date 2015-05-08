@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-Tests-UIImageViewSoftFrameAnimations.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Tests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-UIImageViewSoftFrameAnimations-UIImageViewSoftFrameAnimations.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-UIImageViewSoftFrameAnimations.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UIImageViewSoftFrameAnimations.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0AAE3AE27A02C9B8255112A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>47D3D12D85F9E2A90B7098CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6661E4BB61138271A3A8870C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>775F1F2DCCCEC5D9AA5F1F5D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96D640871E166D784C7805A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

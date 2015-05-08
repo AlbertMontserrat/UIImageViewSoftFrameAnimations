@@ -1,0 +1,14 @@
+PODS:
+  - UIImageViewSoftFrameAnimations (1.0)
+
+DEPENDENCIES:
+  - UIImageViewSoftFrameAnimations (from `../`)
+
+EXTERNAL SOURCES:
+  UIImageViewSoftFrameAnimations:
+    :path: ../
+
+SPEC CHECKSUMS:
+  UIImageViewSoftFrameAnimations: c5eb11abe2ef2560bbfb0a722217ea9c61f3bbe3
+
+COCOAPODS: 0.35.0

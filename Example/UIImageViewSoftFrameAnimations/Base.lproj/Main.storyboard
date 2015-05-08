@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Sample View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="SampleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bird_01.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Lei-Qw-cbH">
+                                <rect key="frame" x="208" y="36" width="184" height="169"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="169" id="gjF-SZ-uap"/>
+                                    <constraint firstAttribute="width" constant="184" id="ocN-U7-3o5"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Mt-4A-two">
+                                <rect key="frame" x="196" y="225" width="209" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="sKj-Ys-a14"/>
+                                    <constraint firstAttribute="width" constant="209" id="zdX-Yj-80B"/>
+                                </constraints>
+                                <state key="normal" title="Play idle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playIdle:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EFS-2Z-hsk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="184-uO-6pB">
+                                <rect key="frame" x="196" y="267" width="209" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VOy-vW-e81"/>
+                                    <constraint firstAttribute="width" constant="209" id="mDn-gi-jNI"/>
+                                </constraints>
+                                <state key="normal" title="Stop idle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseIdle:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OXB-j4-T10"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8s3-gb-pej">
+                                <rect key="frame" x="196" y="465" width="209" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="209" id="1sU-xk-EWK"/>
+                                    <constraint firstAttribute="height" constant="30" id="Typ-s8-qSP"/>
+                                </constraints>
+                                <state key="normal" title="Play 3 times">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playmouth3times:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YlH-se-10t"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bouche_01.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8Et-bE-AgG">
+                                <rect key="frame" x="245" y="334" width="110" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="6jT-d7-K9P"/>
+                                    <constraint firstAttribute="width" constant="110" id="Chj-RB-xs8"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wc-82-5qW">
+                                <rect key="frame" x="196" y="417" width="209" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="209" id="Kc8-tA-R71"/>
+                                    <constraint firstAttribute="height" constant="30" id="Rwd-Yr-XVh"/>
+                                </constraints>
+                                <state key="normal" title="Play once">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playmouth:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jvZ-oW-eSO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lei-Qw-cbH" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="bottom" multiplier="0.2" id="74s-fT-aCR"/>
+                            <constraint firstAttribute="centerX" secondItem="Lei-Qw-cbH" secondAttribute="centerX" id="8EN-UT-JAx"/>
+                            <constraint firstItem="8s3-gb-pej" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="bottom" multiplier="0.8" id="9i3-bo-aO6"/>
+                            <constraint firstAttribute="centerX" secondItem="184-uO-6pB" secondAttribute="centerX" id="AEZ-MP-kAg"/>
+                            <constraint firstAttribute="centerX" secondItem="8s3-gb-pej" secondAttribute="centerX" id="J31-7S-X9n"/>
+                            <constraint firstItem="8Et-bE-AgG" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="bottom" multiplier="0.61" id="Jkt-tD-sOg"/>
+                            <constraint firstItem="184-uO-6pB" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="bottom" multiplier="0.47" id="W4X-ZI-TTy"/>
+                            <constraint firstAttribute="centerX" secondItem="9wc-82-5qW" secondAttribute="centerX" id="bmc-K6-gzs"/>
+                            <constraint firstAttribute="centerX" secondItem="8Mt-4A-two" secondAttribute="centerX" id="fa3-Kv-rd5"/>
+                            <constraint firstAttribute="centerX" secondItem="8Et-bE-AgG" secondAttribute="centerX" id="gdX-bO-eXs"/>
+                            <constraint firstItem="8Mt-4A-two" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="bottom" multiplier="0.4" id="kPL-UF-wQY"/>
+                            <constraint firstItem="9wc-82-5qW" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="bottom" multiplier="0.72" id="pwM-3c-1Md"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bird" destination="Lei-Qw-cbH" id="8u4-Zq-pBZ"/>
+                        <outlet property="mouth" destination="8Et-bE-AgG" id="PkU-TP-gyE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="637" y="453"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bird_01.jpg" width="184" height="169"/>
+        <image name="bouche_01.jpg" width="110" height="64"/>
+    </resources>
+</document>
