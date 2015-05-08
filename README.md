@@ -34,16 +34,24 @@ bird_13.jpg
 bird_14.jpg
 
 `imageName` is the bird_ part
+
 `digits` is 2 because there are only two digits in all the sequence frames.
+
 `firstDigit` is 1
+
 `ext` is jpg without the point
+
 `loop` will determine if the animation will loop. 
+
 `loopCount` if you have specified loop = YES, loopCount will be the number of times that the animation will be reproduced. If loop is NO, this parameter will be ignored.
+
 `framesPerSecond` is the speed of the animation
+
 
 If you want to play an animation only one time, you can achieve this in two ways:
 
 1 - loop = NO
+
 2 - loop = YES and loopCount = 1
 
 The two ways make differents things. The first one will reproduce the animation once and it will leave the last frame as final image. The second one will leave the first frame as the final image. It will give you the opportunity to achieve different animations only changing two parameters.
