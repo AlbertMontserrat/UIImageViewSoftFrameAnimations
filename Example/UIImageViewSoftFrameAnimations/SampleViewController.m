@@ -17,11 +17,11 @@
 
 
 -(IBAction)playIdle:(id)sender{
-    [bird setIdleAnimation:@"bird_" numberOfDigits:2 firstDigit:1 andExtension:@"jpg" startNow:YES andFPS:0.09];
+    [bird resumeIdle];
 }
 
 -(IBAction)pauseIdle:(id)sender{
-    [bird pauseSoftFrameAnimation];
+    [bird pauseIdle];
 }
 
 -(IBAction)playmouth:(id)sender{
@@ -39,6 +39,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    [bird setIdleAnimation:@"bird_" numberOfDigits:2 firstDigit:1 andExtension:@"jpg" startNow:YES andFPS:0.09];
+    [bird pauseIdle];
     
 }
 
